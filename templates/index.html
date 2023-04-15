@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatBot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#chatbot-form').on('submit', function(event) {
+          event.preventDefault();
+          var user_input = $('#user-input').val();
+          $('#chatbot-messages').append('<div class="user-message">' + user_input + '</div>');
+          $.ajax({
+            type: 'GET',
+            url: '/get',
+            data: {msg: user_input},
+            success: function(response) {
+              $('#chatbot-messages').append('<div class="bot-message">' + response + '</div>');
+              $('#user-input').val('');
+              $("#chatbot-messages").scrollTop($("#chatbot-messages")[0].scrollHeight);
+            }
+          });
+        });
+      });
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      #chatbot-header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 32px;
+      }
+      #chatbot-messages {
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .user-message {
+        color: blue;
+        margin-bottom: 10px;
+      }
+      .bot-message {
+        color: green;
+        margin-bottom: 10px;
+      }
+      #chatbot-form {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #user-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      #submit-button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.2s;
+      }
+      #submit-button:hover {
+        background-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chatbot-header">ChatBot</div>
+    <div id="chatbot-messages"></div>
+    <form id="chatbot-form">
+      <input type="text" id="user-input" placeholder="Digite sua mensagem aqui...">
+      <button type="submit" id="submit-button">Enviar</button>
+    </form>
+  </body>
+</html>

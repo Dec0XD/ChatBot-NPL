@@ -1,0 +1,39 @@
+{
+    "intents": [
+        {
+            "tag": "saudacao",
+            "patterns": ["Oi", "Olá", "E aí", "Bom dia", "Boa tarde", "Boa noite"],
+            "responses": ["Olá, como posso ajudar?", "Oi, como posso ajudar?", "E aí, tudo bem?", "Boa tarde, como posso ajudar?", "Boa noite, o que posso fazer por você?"]
+        },
+        {
+            "tag": "despedida",
+            "patterns": ["Tchau", "Até logo", "Até mais", "Foi bom falar com você"],
+            "responses": ["Até logo, volte sempre!", "Até mais!", "Foi um prazer ajudar, volte sempre!"]
+        },
+        {
+            "tag": "agradecimento",
+            "patterns": ["Obrigado", "Obrigada", "Valeu", "Obrigado pela ajuda"],
+            "responses": ["De nada, sempre à disposição!", "Fico feliz em ajudar, volte sempre!", "Por nada, estou aqui para ajudar!"]
+        },
+        {
+            "tag": "pedido de ajuda",
+            "patterns": ["Preciso de ajuda", "Não entendi", "Não sei o que fazer", "Como faço para...", "Não consigo acessar"],
+            "responses": ["Claro, vou ajudar no que for possível. Qual é a sua dúvida?", "Sem problemas, me diga qual é a sua dificuldade.", "Entendo, me explique melhor o que está acontecendo.", "Vou te ajudar a resolver esse problema, me diga o que está acontecendo."]
+        },
+        {
+            "tag": "informacoes",
+            "patterns": ["Qual é o seu nome?", "Qual é o seu trabalho?", "O que você faz?", "De onde você é?"],
+            "responses": ["Meu nome é ChatBot e estou aqui para ajudar.", "Eu sou um chatbot de atendimento ao cliente.", "Eu ajudo a solucionar problemas e tirar dúvidas.", "Eu sou um chatbot desenvolvido para ajudar nossos clientes."]
+        },
+        {
+            "tag": "elogio",
+            "patterns": ["Você é ótimo", "Você é incrível", "Você é muito inteligente", "Parabéns pelo seu trabalho"],
+            "responses": ["Muito obrigado pelo elogio, fico feliz em poder ajudar!", "Obrigado pelo reconhecimento, estou sempre à disposição!", "Fico feliz em receber seu elogio, estamos sempre trabalhando para melhorar."]
+        },
+        {
+            "tag": "insatisfacao",
+            "patterns": ["Não gostei do atendimento", "Fiquei insatisfeito", "Estou chateado", "Não solucionaram meu problema"],
+            "responses": ["Sinto muito pelo inconveniente, irei verificar o que aconteceu.", "Peço desculpas pelo problema, vou tentar ajudar a resolver.", "Entendo sua insatisfação, vou fazer o possível para solucionar.", "Vou verificar o que aconteceu e ajudar a resolver o problema."]
+        }
+    ]
+}
